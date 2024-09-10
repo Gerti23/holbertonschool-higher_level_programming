@@ -8,7 +8,7 @@ def delete_at(my_list=[], idx=0):
         idx (int): The index of the element to delete.
 
     Returns:
-        list: The modified list with the element deleted, or the original list if the index is out of range.
+        list: The modified list with the element deleted
 
     Example:
         >>> delete_at([1, 2, 3, 4], 2)
