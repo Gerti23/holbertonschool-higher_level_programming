@@ -7,7 +7,7 @@ def divisible_by_2(my_list=[]):
         my_list (list): A list of integers.
 
     Returns:
-        list: A list of boolean  where True indicates  element in list is divisible by 2,False otherwise.
+        list: A list of boolean  in list is divisible by 2,False otherwise.
 
     Example:
         >>> divisible_by_2([1, 2, 3, 4])
