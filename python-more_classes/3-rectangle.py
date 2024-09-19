@@ -126,7 +126,7 @@ class Rectangle:
         Returns
         -------
         str
-        A string representation of the rectangle, or an empty string ifwidth or height is 0
+        A string representation of the rectangle
         """
         if self.__width == 0 or self.__height == 0:
             return ""
