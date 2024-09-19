@@ -6,7 +6,6 @@ Provides a Rectangle class with width and height attributes.
 """
 
 
-
 class Rectangle:
     """
     A class used to represent a Rectangle
@@ -25,7 +24,7 @@ class Rectangle:
     perimeter():
         Returns the perimeter of the rectangle
     __str__():
-        Returns a string representation of the rectangle using the '#' character
+        Returns a string representation of therectangle using the '#' character
     """
 
     def __init__(self, width, height):
@@ -78,7 +77,7 @@ class Rectangle:
         """
         Sets the height of the rectangle
 
-        Parameters
+        Parameter
         ----------
         value : int
             The height of the rectangle
