@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 def lookup(obj):
     """
-    Returns the dictionary representation of an object's attributes.
+    Returns the list of available attributes and methods of an object.
 
     Args:
-        obj: The object whose attributes are to be returned.
+        obj: The object to inspect.
 
     Returns:
-        dict: A dictionary containing the object's attributes and their values.
+        list: A list of strings representing the attributes and methods of the object.
     """
-    return obj.__dict__
+    return dir(obj)
