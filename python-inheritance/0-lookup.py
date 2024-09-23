@@ -1,3 +1,3 @@
 #!/usr/bin/python3 
 def lookup(obj):
-    return self.list
+        return obj.__dict__
