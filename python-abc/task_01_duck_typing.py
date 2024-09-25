@@ -1,92 +1,97 @@
-#!/usr/bin/python3
-"""
-This line indicates that the script should be executed using Python 3.
-It is known as a shebang line and helps the operating system determine
-which interpreter to use to run the script.
-"""
-
 from abc import ABC, abstractmethod
 
+# Define the abstract class Shape
 class Shape(ABC):
     """
-    Abstract class representing a geometric shape.
-    This class cannot be instantiated and contains two abstract methods: 'area' and 'perimeter'.
+    Abstract base class for different shapes.
     """
 
     @abstractmethod
     def area(self):
         """
-        Abstract method that must be implemented by subclasses.
-        This method should return the area of the shape.
+        Calculate the area of the shape.
+        This method must be implemented by subclasses.
         """
         pass
 
     @abstractmethod
     def perimeter(self):
         """
-        Abstract method that must be implemented by subclasses.
-        This method should return the perimeter of the shape.
+        Calculate the perimeter of the shape.
+        This method must be implemented by subclasses.
         """
         pass
 
+# Circle class inheriting from Shape
 class Circle(Shape):
     """
-    Class representing a circle, inheriting from the Shape class.
-    Implements the 'area' and 'perimeter' methods.
+    Circle class that implements the Shape interface.
     """
 
     def __init__(self, radius):
+        """
+        Initialize a Circle with a given radius.
+        :param radius: Radius of the circle
+        """
         self.radius = radius
 
     def area(self):
         """
-        Returns the area of the circle.
+        Calculate the area of the circle.
+        :return: Area of the circle
         """
-        return 3.14 * self.radius * self.radius
+        return 3.14159 * (self.radius ** 2)
 
     def perimeter(self):
         """
-        Returns the perimeter (circumference) of the circle.
+        Calculate the perimeter (circumference) of the circle.
+        :return: Perimeter of the circle
         """
-        return 2 * 3.14 * self.radius
+        return 2 * 3.14159 * self.radius
 
+# Rectangle class inheriting from Shape
 class Rectangle(Shape):
     """
-    Class representing a rectangle, inheriting from the Shape class.
-    Implements the 'area' and 'perimeter' methods.
+    Rectangle class that implements the Shape interface.
     """
 
     def __init__(self, width, height):
+        """
+        Initialize a Rectangle with a given width and height.
+        :param width: Width of the rectangle
+        :param height: Height of the rectangle
+        """
         self.width = width
         self.height = height
 
     def area(self):
         """
-        Returns the area of the rectangle.
+        Calculate the area of the rectangle.
+        :return: Area of the rectangle
         """
         return self.width * self.height
 
     def perimeter(self):
         """
-        Returns the perimeter of the rectangle.
+        Calculate the perimeter of the rectangle.
+        :return: Perimeter of the rectangle
         """
         return 2 * (self.width + self.height)
 
-    def shape_info(shape):
-        
+# Function to print area and perimeter of a shape
+def shape_info(shape):
     """
-    Function that takes a shape object and prints its area and perimeter.
-    Relies on duck typing to call the 'area' and 'perimeter' methods.
+    Print the area and perimeter of a shape.
+    This function relies on duck typing and does not check the type of the shape.
+    :param shape: An object that implements the Shape interface
     """
     print(f"Area: {shape.area()}")
     print(f"Perimeter: {shape.perimeter()}")
 
+# Testing the classes and function
 if __name__ == "__main__":
     circle = Circle(5)
     rectangle = Rectangle(4, 6)
-    
-    print("Circle Info:")
-    shape_info(circle)  # Output: Area: 78.5, Perimeter: 31.400000000000002
-    
-    print("\nRectangle Info:")
-    shape_info(rectangle)  # Output: Area: 24, Perimeter: 20
+
+    shape_info(circle)
+    shape_info(rectangle)
