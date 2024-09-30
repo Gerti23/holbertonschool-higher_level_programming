@@ -1,18 +1,12 @@
-#!/usr/bin/python3
-"""Code i will use to learn about ABC"""
+#!/usr/bin/env python3
+from task_03_countediterator import CountedIterator
 
-class CountedIterator():
+data = [1, 2, 3, 4]
+counted_iter = CountedIterator(data)
 
-    def __init__(self, iterable):
-        self.iterator = iter(iterable)
-        self.count = 0
-        self.start = 0
-    
-    def __next__(self):
-        next(self.iterator)
-        self.start += 1
-        self.count += 1
-        return self.start
-
-    def get_count(self):
-        return self.count
+try:
+    while True:
+        item = next(counted_iter)
+        print(f"Got {item}, total {counted_iter.get_count()} items iterated.")
+except StopIteration:
+    print("No more items.")
