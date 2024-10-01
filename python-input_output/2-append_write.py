@@ -5,4 +5,4 @@
 def append_write(filename="", text=""):
     """Writes a string to a text file(UTF8) and returns the number of chars."""
     with open(filename, 'a', encoding="utf-8") as f:
-        return f.append_write(text)
+        return f.append(text)
