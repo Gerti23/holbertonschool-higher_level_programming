@@ -1,4 +1,4 @@
-    #!/usr/bin/python3
+#!/usr/bin/python3
 """
 This module provides a function that
 returns an object (Python data structure)
