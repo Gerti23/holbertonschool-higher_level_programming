@@ -1,3 +1,3 @@
--- This script lists all tables of the database passed as an argument
+-- List all the tables of database
 
-SHOW TABLE;
+SHOW TABLES;
