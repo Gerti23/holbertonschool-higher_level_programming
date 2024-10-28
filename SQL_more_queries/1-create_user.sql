@@ -1,11 +1,7 @@
--- Attempt to create user 'user_0d_1' with the specified password
+-- Write a script that creates the MySQL server user user_0d_1
+
 CREATE USER IF NOT EXISTS 'user_0d_1'@'localhost' IDENTIFIED BY 'user_0d_1_pwd';
 
--- If the user already exists, update the password to 'user_0d_1_pwd'
-ALTER USER 'user_0d_1'@'localhost' IDENTIFIED BY 'user_0d_1_pwd';
+-- List privileges for user_0d_2
 
--- Grant all privileges on the server to 'user_0d_1'
-GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost' WITH GRANT OPTION;
-
--- Apply privilege changes
-FLUSH PRIVILEGES;
+GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost';
