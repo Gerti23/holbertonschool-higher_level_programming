@@ -1,3 +1,5 @@
+import re
+
 def generate_invitations(template, attendees):
     if not template:
         print("Template is empty, no output files generated.")
@@ -8,21 +10,24 @@ def generate_invitations(template, attendees):
         return
 
     if not isinstance(template, str):
-        print("template should be a string")
+        print("Template should be a string.")
         return
     
-    if not all([isinstance(value, dict) for value in attendees]):
-        print("attendees should be a list of dict's")
+    if not all(isinstance(value, dict) for value in attendees):
+        print("Attendees should be a list of dictionaries.")
         return
-    
+
+    # Find all unique placeholders in the template
+    placeholders = re.findall(r'{(.*?)}', template)
+
     for i, attendee in enumerate(attendees):
         personal_template = template
-        for attr, value in attendee.items():
-            if not value:
-                value = "N/A"
-            personal_template = personal_template.replace('{' + attr + '}', value)
-        with open('output_' + str(i + 1) + ".txt", 'w', encoding="utf-8") as f:
-            f.write(personal_template)
+        for placeholder in placeholders:
+            # Replace with attendee value or "N/A" if missing
+            value = attendee.get(placeholder, "N/A")
+            personal_template = personal_template.replace('{' + placeholder + '}', value)
 
+        with open(f'output_{i + 1}.txt', 'w', encoding="utf-8") as f:
+            f.write(personal_template)
     
 
